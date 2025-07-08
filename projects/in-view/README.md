@@ -1,63 +1,44 @@
-# InView
+# ngx-in-view
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+> 🔍 Angular directive to detect when an element enters the viewport using `IntersectionObserver`. Add animation classes or trigger callbacks with ease.
 
-## Code scaffolding
+![npm](https://img.shields.io/npm/v/ngx-in-view)
+![downloads](https://img.shields.io/npm/dw/ngx-in-view)
+![license](https://img.shields.io/npm/l/ngx-in-view)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## ✨ Features
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- 🔁 Automatically detect when an element comes into view
+- 🎨 Add CSS animation classes
+- 🔔 Trigger callbacks via `(inView)` event
+- ⚙️ Configurable threshold and trigger behavior
+- 🧩 Works great with lazy-loading and animation libraries like Animate.css or GSAP
 
-```bash
-ng generate --help
-```
+---
 
-## Building
-
-To build the library, run:
-
-```bash
-ng build in-view
-```
-
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
-
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/in-view
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 📦 Installation
 
 ```bash
-ng test
-```
+npm install ngx-in-view
 
-## Running end-to-end tests
+## 🧰 Parameters
 
-For end-to-end (e2e) testing, run:
+| Parameter         | Type                    | Default  | Description                                                                 |
+|-------------------|-------------------------|----------|-----------------------------------------------------------------------------|
+| `appInView`       | `string`                | `''`     | (Optional) Space-separated CSS classes to apply when element is in view     |
+| `threshold`       | `number`                | `0.1`    | (Optional) Visibility ratio (0 to 1) required to trigger the directive       |
+| `triggerOnce`     | `boolean`               | `true`   | (Optional) If true, the directive triggers only once                        |
+| `(inView)`        | `EventEmitter<void>`    | —        | Emits when the element becomes visible in the viewport                      |
 
-```bash
-ng e2e
-```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Example
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+<div
+  [appInView]="'fade-in bounce'"
+  [threshold]="0.3"
+  [triggerOnce]="true"
+>
+  This will animate when it appears in the viewport!
+</div>

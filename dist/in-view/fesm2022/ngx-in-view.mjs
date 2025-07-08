@@ -75,4 +75,4 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "19.2.14", ngImpo
  */
 
 export { InViewDirective };
-//# sourceMappingURL=in-view.mjs.map
+//# sourceMappingURL=ngx-in-view.mjs.map
